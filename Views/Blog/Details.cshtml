@@ -1,0 +1,165 @@
+﻿@model TbBlog
+@{
+    List<TbBlogComment> blogComment = ViewBag.blogComment;
+}
+
+        <!-- Begin Main Content Area -->
+<main class="main-content">
+    <div class="breadcrumb-area breadcrumb-height" data-bg-image="https://cdn.pixabay.com/photo/2015/05/21/16/57/vegetable-777473_1280.jpg">
+        <div class="container h-100">
+            <div class="row h-100">
+                <div class="col-lg-12">
+                    <div class="breadcrumb-item">
+                        <h2 class="breadcrumb-heading" style="font-family: cursive">Blog Layout</h2>
+                        <ul>
+                            <li>
+                                <a href="index.html">Home <i class="pe-7s-angle-right"></i></a>
+                            </li>
+                            <li>Blog Detail Default</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="blog-area section-space-y-axis-100">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="blog-detail-item">
+                        <div class="blog-img">
+                       @*      <img style="width: 100px; height: 100px" src="~/assets/images/blog/large-size/@Model.Image" alt="Blog Image"> *@
+                        </div>
+                        <div class="blog-content text-start pb-0">
+                            <div class="blog-meta text-dim-gray pb-3">
+                                <ul>
+                                    <li class="date"><i class="fa fa-calendar-o me-2"></i>@Model.CreatedDate</li>
+                                    <li>
+                                        <span class="comments me-3">
+                                            <a href="javascript:void(0)">@blogComment.Count() Comments</a>
+                                        </span>
+                                        <span class="link-share">
+                                            <a href="javascript:void(0)">Share</a>
+                                        </span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <h5 class="title mb-4">
+                                <a href="blog-detail-left-sidebar.html">@Model.Title</a>
+                            </h5>
+                            @Html.Raw(Model.Detail)
+                            <p class="short-desc mb-4 mb-7">@Model.Description</p>
+                            <blockquote class="pt-6 pb-5 mb-5">
+                                <div class="inner-content">
+                                    <p class="mb-0">
+                                     Nhớ quan tâm đến sức khỏe bản thân mình nhé bạn ơi!<br> MasterCheef
+                                        <span class="user-name ms-5 mb-0">Khac Duc</span>
+                                    </p>
+                                </div>
+                            </blockquote>
+                            <div class="blog-banner pb-10">
+                                <div class="single-content pt-4 pt-md-0">
+                                    <p class="short-desc mb-4 mb-5">Trái cây là nguồn dinh dưỡng tuyệt vời, đóng vai trò quan trọng trong chế độ ăn uống hàng ngày của con người. Mỗi loại trái cây đều mang trong mình những giá trị dinh dưỡng riêng biệt, chẳng hạn như giàu vitamin, khoáng chất, chất xơ và chất chống oxy hóa. Những loại quả như cam, quýt, bưởi nổi tiếng với hàm lượng vitamin C dồi dào, giúp tăng cường hệ miễn dịch và chống lại các tác nhân gây bệnh. </p>
+                                    <p class="short-desc mb-4 mb-5">Chuối là nguồn cung cấp kali tốt, hỗ trợ sức khỏe tim mạch, trong khi táo với chất xơ pectin có lợi cho hệ tiêu hóa. Trái cây không chỉ mang lại lợi ích về mặt dinh dưỡng mà còn đem đến hương vị thơm ngon, đa dạng, phù hợp với nhiều sở thích khác nhau. </p>
+                                    <p class="short-desc mb-4 mb-0">Từ những loại quả ngọt như xoài, nhãn, đến những loại có vị chua thanh như dâu tây, chanh, mỗi loại đều tạo nên sự phong phú trong bữa ăn. Thêm vào đó, việc tiêu thụ trái cây đều đặn giúp giảm nguy cơ mắc các bệnh mãn tính như tiểu đường, béo phì và bệnh tim mạch.</p>
+                                </div>
+                                <div class="single-img">
+                                    <img class="img-full" src="~/assets/images/blog/banner/@Model.Image" alt="Blog Banner">
+                                </div>
+                            </div>
+                            <p class="short-desc mb-4 mb-10">Trái cây không chỉ là món quà tuyệt vời của thiên nhiên mà còn là nguồn cảm hứng bất tận cho nhiều món ăn, từ sinh tố, nước ép, đến salad và các món tráng miệng hấp dẫn.</p>
+                            <div class="tag-wtih-social">
+                                <div class="tag">
+                                    <span class="title text-primary">Tags:</span>
+                                    <ul>
+                                        <li>
+                                            <a href="javascript:void(0)">Furniture,</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0)">Taste,</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0)">Fruit Good</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="social-link">
+                                    <ul>
+                                        <li>
+                                            <a href="javascript:void(0)">
+                                                <i class="fa fa-facebook"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0)">
+                                                <i class="fa fa-pinterest-p"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0)">
+                                                <i class="fa fa-dribbble"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="blog-comment pt-10">
+                                <h4 class="heading mb-7">@blogComment.Count() Comments</h4>
+                                @foreach (var item in blogComment)
+                                {
+                                    <div class="blog-comment-item mb-8">
+                                        <div class="blog-comment-img">
+                                            <img src="~/assets/images/avatar/1.jpg" alt="Avatar">
+                                        </div>
+                                        <div class="blog-comment-content">
+                                            <div class="user-meta">
+                                                <span><strong>@item.Name -</strong> @item.CreatedDate</span>
+                                                <a class="btn btn-link hover-white d-none d-md-flex" href="javascript:void(0)">
+                                                    <i class="fa fa-reply me-2"></i>
+                                                    Reply
+                                                </a>
+                                            </div>
+                                            <span class="user-occupation text-primary">@item.Email</span>
+                                            <p class="user-comment mb-0">@item.Detail</p>
+                                            <a class="btn btn-link hover-white d-inline-flex d-md-none mt-5" href="javascript:void(0)">
+                                                <i class="fa fa-reply me-2"></i>
+                                                Reply
+                                            </a>
+                                        </div>
+                                    </div>
+                                }
+                            </div>
+                            <div class="feedback-area section-space-top-55">
+                                <h4 class="heading mb-1">Leave a comment</h4>
+                                <form class="feedback-form pt-8" method="post">
+                                    <input type="hidden" id="c_blogId" name="blogId" value="@ViewBag.BlogId" /> <!-- Truyền blogId từ Model -->
+
+                                    <div class="group-input">
+                                        <div class="form-field me-md-6 mb-6 mb-md-0">
+                                            <input type="text" id="c_name" name="name" placeholder="Your Name*" class="input-field">
+                                        </div>
+                                        <div class="form-field me-md-6 mb-6 mb-md-0">
+                                            <input id="c_email" type="text" name="email" placeholder="Your Email*" class="input-field">
+                                        </div>
+                                        <div class="form-field">
+                                            <input type="text" id="c_phone" name="number" placeholder="Phone number" class="input-field">
+                                        </div>
+                                    </div>
+                                    <div class="form-field mt-6">
+                                        <textarea id="c_message" name="message" placeholder="Message" class="textarea-field"></textarea>
+                                    </div>
+                           
+                                    <div class="button-wrap mt-8">
+                                        <button type="submit" id="c_submit" value="submit" class="btn btn-custom-size lg-size btn-secondary btn-primary-hover btn-lg rounded-0" name="submit">Submit</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<!-- Main Content Area End Here -->
+
